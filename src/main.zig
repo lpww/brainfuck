@@ -1,5 +1,7 @@
 const std = @import("std");
 
+const max_file_size = 1024;
+
 pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
     defer _ = gpa.deinit();
@@ -14,7 +16,7 @@ pub fn main() !void {
 
     var buffered_reader = std.io.bufferedReader(file.reader());
     const reader = buffered_reader.reader();
-    const content = try reader.readAllAlloc(allocator, 4096);
+    const content = try reader.readAllAlloc(allocator, max_file_size);
     defer allocator.free(content);
 
     std.debug.print("Executing brainfuck:\n\n{s} \n", .{content});
