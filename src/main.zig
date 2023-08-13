@@ -1,6 +1,7 @@
 const std = @import("std");
 
-const max_file_size = 1024;
+const config = @import("config.zig");
+const Brainfuck = @import("brainfuck.zig").Brainfuck;
 
 pub fn main() !void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
@@ -16,8 +17,9 @@ pub fn main() !void {
 
     var buffered_reader = std.io.bufferedReader(file.reader());
     const reader = buffered_reader.reader();
-    const content = try reader.readAllAlloc(allocator, max_file_size);
-    defer allocator.free(content);
+    const program = try reader.readAllAlloc(allocator, config.max_file_size);
+    defer allocator.free(program);
 
-    std.debug.print("Executing brainfuck:\n\n{s} \n", .{content});
+    var bf = Brainfuck{ .alloc = allocator };
+    try bf.run(program);
 }
