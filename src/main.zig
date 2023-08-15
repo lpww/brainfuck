@@ -20,6 +20,7 @@ pub fn main() !void {
     const program = try reader.readAllAlloc(allocator, config.max_file_size);
     defer allocator.free(program);
 
-    var bf = Brainfuck{ .alloc = allocator };
+    var bf = Brainfuck.init(allocator);
+    defer bf.deinit();
     try bf.run(program);
 }
