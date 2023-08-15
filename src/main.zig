@@ -22,5 +22,6 @@ pub fn main() !void {
 
     var bf = Brainfuck.init(allocator);
     defer bf.deinit();
+
     try bf.run(program);
 }
