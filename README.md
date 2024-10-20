@@ -4,7 +4,7 @@ a brainfuck interpreter written in zig
 
 ## zig version
 
-most recently compiled with zig `0.12.0-dev.66+5e0107fbc`
+most recently compiled with zig `0.12.1`
 
 ## commands
 
