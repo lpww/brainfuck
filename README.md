@@ -1,10 +1,6 @@
 # brainfuck
 
-a brainfuck interpreter written in zig
-
-## zig version
-
-most recently compiled with zig `0.13.0`
+a brainfuck interpreter written in zig. check out the [brainfuck spec](https://github.com/sunjay/brainfuck/blob/master/brainfuck.md) for details.
 
 ## commands
 
@@ -28,3 +24,7 @@ most recently compiled with zig `0.13.0`
 - [ ] lost kingdom
 - [ ] mandel
 - [ ] qsort
+
+## zig version
+
+most recently compiled with zig `0.13.0`
