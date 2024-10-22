@@ -17,6 +17,7 @@ a brainfuck interpreter written in zig. check out the [brainfuck spec](https://g
 
 - [x] fib
 - [x] hello world
+- [x] input
 - [x] sierpinski
 - [ ] 99 bottles
 - [ ] bsort
