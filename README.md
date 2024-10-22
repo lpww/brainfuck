@@ -20,7 +20,7 @@ a brainfuck interpreter written in zig. check out the [brainfuck spec](https://g
 - [x] input
 - [x] sierpinski
 - [ ] 99 bottles
-- [ ] bsort
+- [ ] bsort (pass stdin eg echo 876545678 | brainfuck path/to/file.bf)
 - [ ] hanoi
 - [ ] lost kingdom
 - [ ] mandel
