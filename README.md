@@ -8,10 +8,10 @@ a brainfuck interpreter written in zig. check out the [brainfuck spec](https://g
 * run with `zig build run -- examples/hello-world.bf`
 * test with `zig build test`
 
-## bugs
+## todo
 
-* programs are not reading inputs from stdin
 * large programs are not able to be stored in memory and give a StreamTooLong error
+* add test cases
 
 ## examples
 
