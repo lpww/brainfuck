@@ -34,8 +34,8 @@ pub const Brainfuck = struct {
                 '<' => self.movePointerLeft(),
                 '+' => try self.increaseCell(),
                 '-' => try self.decreaseCell(),
-                '.' => try self.logCell(),
-                ',' => try self.replaceValue(),
+                '.' => try self.output(),
+                ',' => try self.input(),
                 '[' => try self.jumpToClose(),
                 ']' => try self.jumpToOpen(),
                 else => {},
@@ -65,13 +65,13 @@ pub const Brainfuck = struct {
         try self.mem.set(self.reg.address_pointer, new);
     }
 
-    fn logCell(self: *Brainfuck) !void {
+    fn output(self: *Brainfuck) !void {
         const stdout = std.io.getStdOut().writer();
         const value = try self.mem.get(self.reg.address_pointer);
         try stdout.writeByte(value);
     }
 
-    fn replaceValue(self: *Brainfuck) !void {
+    fn input(self: *Brainfuck) !void {
         const stdin = std.io.getStdIn().reader();
         const value = stdin.readByte() catch 0;
         try self.mem.set(self.reg.address_pointer, value);
