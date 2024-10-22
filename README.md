@@ -15,16 +15,16 @@ a brainfuck interpreter written in zig. check out the [brainfuck spec](https://g
 
 ## examples
 
+- [x] bsort (pass stdin eg echo 876545678 | brainfuck path/to/file.bf)
 - [x] fib
 - [x] hello world
 - [x] input
+- [x] qsort
 - [x] sierpinski
 - [ ] 99 bottles
-- [ ] bsort (pass stdin eg echo 876545678 | brainfuck path/to/file.bf)
 - [ ] hanoi
 - [ ] lost kingdom
 - [ ] mandel
-- [ ] qsort
 
 ## zig version
 

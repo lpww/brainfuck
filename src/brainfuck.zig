@@ -73,7 +73,7 @@ pub const Brainfuck = struct {
 
     fn replaceValue(self: *Brainfuck) !void {
         const stdin = std.io.getStdIn().reader();
-        const value = try stdin.readByte();
+        const value = stdin.readByte() catch 0;
         try self.mem.set(self.reg.address_pointer, value);
     }
 
