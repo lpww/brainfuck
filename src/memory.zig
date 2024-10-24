@@ -20,14 +20,14 @@ pub const Memory = struct {
     }
 };
 
-test "should init with zeroes" {
+test "memory.data: should init with zeroes" {
     const mem = Memory{};
     for (mem.data) |value| {
         try std.testing.expect(value == 0);
     }
 }
 
-test "should set the memory" {
+test "memory.set: should set the memory" {
     var mem: Memory = Memory{};
     const index = 0;
     const value = 1;
@@ -37,7 +37,7 @@ test "should set the memory" {
     try std.testing.expect(mem.data[index] == value);
 }
 
-test "should error if setting memory out of bounds" {
+test "memory.set: should error if setting memory out of bounds" {
     var mem: Memory = Memory{};
     const index = 50000;
     const value = 1;
@@ -46,7 +46,7 @@ test "should error if setting memory out of bounds" {
     try std.testing.expectError(error.OutOfMemory, result);
 }
 
-test "should get the memory" {
+test "memory.get: should get the memory" {
     var mem: Memory = Memory{};
 
     const index = 0;
@@ -58,7 +58,7 @@ test "should get the memory" {
     try std.testing.expect(result == expect);
 }
 
-test "should error if getting the memory out of bounds" {
+test "memory.get: should error if getting the memory out of bounds" {
     var mem: Memory = Memory{};
 
     const result = mem.get(50000);
