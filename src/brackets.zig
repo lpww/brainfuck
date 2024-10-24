@@ -32,7 +32,7 @@ pub const Brackets = struct {
         }
 
         if (stack.items.len > 0) {
-            return error.MissingCloseBracket;
+            return error.MissingClosingBracket;
         }
     }
 
